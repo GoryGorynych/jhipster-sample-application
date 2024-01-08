@@ -1,0 +1,26 @@
+{
+  "annotations": {
+    "changelogDate": "20240108075858"
+  },
+  "applications": "*",
+  "entityTableName": "genre",
+  "fields": [
+    {
+      "fieldName": "genreName",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Genre",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "book",
+      "otherEntityRelationshipName": "genre",
+      "relationshipName": "book",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

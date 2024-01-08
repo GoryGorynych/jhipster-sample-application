@@ -1,0 +1,30 @@
+{
+  "annotations": {
+    "changelogDate": "20240108075758"
+  },
+  "applications": "*",
+  "entityTableName": "author",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "secondName",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Author",
+  "pagination": "infinite-scroll",
+  "relationships": [
+    {
+      "otherEntityName": "book",
+      "otherEntityRelationshipName": "author1",
+      "relationshipName": "book",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
