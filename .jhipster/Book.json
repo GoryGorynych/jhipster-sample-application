@@ -18,24 +18,17 @@
   "pagination": "infinite-scroll",
   "relationships": [
     {
-      "otherEntityName": "comment",
-      "otherEntityRelationshipName": "book",
-      "relationshipName": "comment",
-      "relationshipSide": "left",
-      "relationshipType": "one-to-many"
-    },
-    {
       "otherEntityField": "secondName",
       "otherEntityName": "author",
       "relationshipName": "author",
-      "relationshipSide": "right",
+      "relationshipSide": "left",
       "relationshipType": "many-to-one"
     },
     {
       "otherEntityField": "genreName",
       "otherEntityName": "genre",
       "relationshipName": "genre",
-      "relationshipSide": "right",
+      "relationshipSide": "left",
       "relationshipType": "many-to-one"
     }
   ],

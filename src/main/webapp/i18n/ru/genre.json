@@ -18,8 +18,7 @@
         "title": "Genre"
       },
       "id": "ID",
-      "genreName": "Genre Name",
-      "book": "Book"
+      "genreName": "Genre Name"
     }
   }
 }
