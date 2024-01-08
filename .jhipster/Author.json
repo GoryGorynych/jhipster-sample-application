@@ -16,15 +16,7 @@
   ],
   "name": "Author",
   "pagination": "infinite-scroll",
-  "relationships": [
-    {
-      "otherEntityName": "book",
-      "otherEntityRelationshipName": "author",
-      "relationshipName": "book",
-      "relationshipSide": "left",
-      "relationshipType": "one-to-many"
-    }
-  ],
+  "relationships": [],
   "searchEngine": "no",
   "service": "serviceImpl"
 }

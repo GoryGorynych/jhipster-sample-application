@@ -3,11 +3,8 @@ package ru.gor.library.domain;
 import static org.assertj.core.api.Assertions.assertThat;
 import static ru.gor.library.domain.AuthorTestSamples.*;
 import static ru.gor.library.domain.BookTestSamples.*;
-import static ru.gor.library.domain.CommentTestSamples.*;
 import static ru.gor.library.domain.GenreTestSamples.*;
 
-import java.util.HashSet;
-import java.util.Set;
 import org.junit.jupiter.api.Test;
 import ru.gor.library.web.rest.TestUtil;
 
@@ -25,28 +22,6 @@ class BookTest {
 
         book2 = getBookSample2();
         assertThat(book1).isNotEqualTo(book2);
-    }
-
-    @Test
-    void commentTest() throws Exception {
-        Book book = getBookRandomSampleGenerator();
-        Comment commentBack = getCommentRandomSampleGenerator();
-
-        book.addComment(commentBack);
-        assertThat(book.getComments()).containsOnly(commentBack);
-        assertThat(commentBack.getBook()).isEqualTo(book);
-
-        book.removeComment(commentBack);
-        assertThat(book.getComments()).doesNotContain(commentBack);
-        assertThat(commentBack.getBook()).isNull();
-
-        book.comments(new HashSet<>(Set.of(commentBack)));
-        assertThat(book.getComments()).containsOnly(commentBack);
-        assertThat(commentBack.getBook()).isEqualTo(book);
-
-        book.setComments(new HashSet<>());
-        assertThat(book.getComments()).doesNotContain(commentBack);
-        assertThat(commentBack.getBook()).isNull();
     }
 
     @Test

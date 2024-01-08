@@ -17,7 +17,7 @@
       "otherEntityField": "name",
       "otherEntityName": "book",
       "relationshipName": "book",
-      "relationshipSide": "right",
+      "relationshipSide": "left",
       "relationshipType": "many-to-one"
     }
   ],

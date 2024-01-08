@@ -24,7 +24,7 @@ public class Comment implements Serializable {
 
     @DBRef
     @Field("book")
-    @JsonIgnoreProperties(value = { "comments", "author", "genre" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "author", "genre" }, allowSetters = true)
     private Book book;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

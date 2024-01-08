@@ -17,10 +17,18 @@ entity Comment {
 	comment String
 }
 
+/*
 relationship OneToMany {
 	Author to Book{author(secondName)},
     Genre to Book{genre(genreName)},
     Book to Comment{book(name)}
+}
+*/
+
+relationship ManyToOne {
+	Book{author(secondName)} to Author,
+    Book{genre(genreName)} to Genre,
+    Comment{book(name)} to Book
 }
 
 // Set pagination options

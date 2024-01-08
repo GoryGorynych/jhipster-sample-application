@@ -1,9 +1,6 @@
 package ru.gor.library.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -28,18 +25,11 @@ public class Book implements Serializable {
     private String description;
 
     @DBRef
-    @Field("comment")
-    @JsonIgnoreProperties(value = { "book" }, allowSetters = true)
-    private Set<Comment> comments = new HashSet<>();
-
-    @DBRef
     @Field("author")
-    @JsonIgnoreProperties(value = { "books" }, allowSetters = true)
     private Author author;
 
     @DBRef
     @Field("genre")
-    @JsonIgnoreProperties(value = { "books" }, allowSetters = true)
     private Genre genre;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -81,37 +71,6 @@ public class Book implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Set<Comment> getComments() {
-        return this.comments;
-    }
-
-    public void setComments(Set<Comment> comments) {
-        if (this.comments != null) {
-            this.comments.forEach(i -> i.setBook(null));
-        }
-        if (comments != null) {
-            comments.forEach(i -> i.setBook(this));
-        }
-        this.comments = comments;
-    }
-
-    public Book comments(Set<Comment> comments) {
-        this.setComments(comments);
-        return this;
-    }
-
-    public Book addComment(Comment comment) {
-        this.comments.add(comment);
-        comment.setBook(this);
-        return this;
-    }
-
-    public Book removeComment(Comment comment) {
-        this.comments.remove(comment);
-        comment.setBook(null);
-        return this;
     }
 
     public Author getAuthor() {

@@ -20,7 +20,6 @@
       "id": "ID",
       "name": "Name",
       "description": "Description",
-      "comment": "Comment",
       "author": "Author",
       "genre": "Genre"
     }
